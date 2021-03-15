@@ -19,19 +19,20 @@ public class Meny {
     public static float laddat;
     public static ArrayList<Mat> matList = new ArrayList<Mat>();
     public static ArrayList<Drink> drinkList = new ArrayList<>();
+    public static ArrayList<Dress> dressList = new ArrayList<>();
     
     public static void Menu() {
 Scanner scan;
         scan = new Scanner(System.in);
         System.out.println("------------------------------------");
-        System.out.println("Mat almak için ..1 ");
-        System.out.println("Drink almak için ..2 ");
-        System.out.println("Kleder almak için ..3 ");
-        System.out.println("Para Yüklemek için ..4 ");
+        System.out.println("För att köpa Mat  ..1 ");
+        System.out.println("För att köpa Drink  ..2 ");
+        System.out.println("För att köpa Kläder ..3 ");
+        System.out.println("För att ladda pengar ..4 ");
         System.out.println("Kolla saldo ..9 ");
-        System.out.println("Cıkmak için ..0 ");
+        System.out.println("För att avsluta programmet ..0 ");
         System.out.println("------------------------------------");
-        System.out.print("Ne yapmak istiyorsun ? ");
+        System.out.print("Har du bestämt vad du skulle göra ? ");
         int x = scan.nextInt();
         //ProduktInterface mt = new Mat(12, "Elma", "Yiyecek", 120);
 
@@ -50,35 +51,39 @@ Scanner scan;
             Drink.DrinkKop(drinkList);
                 break;
             case 3:
+                Dress.DressList(dressList);
+                Dress.DressKop(dressList);
                 break;
             case 4:
                LaddaPengar();
                 Menu();               
                break;              
             case 9:
-                System.out.println("Du har "+Meny.laddat);
+                System.out.println("Du har "+Meny.laddat+" kr");
                 Menu();
                 break;
             default:
                 Menu();
+                break;
         }
         
     }
    
-    public static void LaddaPengar() throws InterruptedException{
+    public static void LaddaPengar() {
       Scanner scan = new Scanner(System.in);
             float choiceladda;
-                    System.out.println(".........................................");
-            System.out.print("Hangisini yüklemek istiyorsun ");
-            System.out.println("Bitirmek için ..0 ");
+            System.out.println(".........................................");
+            System.out.println("För att avsluta köpa ..0 ");
+            System.out.print("Vilken mynt ska du ladda upp? ");
             int z = scan.nextInt();
+
             switch(z){
                 case 0:
                     Meny.Menu();
                     break; 
                 case 1:
                     
-                    System.out.print("Kac tane girmek istiyorsunuz ");
+                    System.out.print("Hur många ska du ladda ett mynt ? ");
                     choiceladda = scan.nextFloat();
                     Meny.laddat += ( choiceladda * 1);
                     System.out.println("Du har nu "+ Meny.laddat+" pengar :) ");
@@ -86,21 +91,21 @@ Scanner scan;
                     
                     break;
                 case 5:
-                    System.out.print("Kac tane girmek istiyorsunuz ");
+                    System.out.print("Hur många ska du ladda fem mynt ? ");
                     choiceladda = scan.nextFloat();
                     Meny.laddat += ( choiceladda * 5);
                     System.out.println("Du har nu "+ Meny.laddat+" pengar :) ");
                     Meny.Menu();
                     break;
                 case 10:
-                    System.out.print("Kac tane girmek istiyorsunuz ");
+                    System.out.print("Hur många ska du ladda tio mynt ? ");
                     choiceladda = scan.nextFloat();
                     Meny.laddat += ( choiceladda * 10);
                     System.out.println("Du har nu "+ Meny.laddat+" pengar :) ");
                     Meny.Menu();
                     break;
                 case 20:
-                    System.out.print("Kac tane girmek istiyorsunuz ");
+                    System.out.print("Hur många ska du ladda tjugo mynt ? ");
                     choiceladda = scan.nextFloat();
                     Meny.laddat += ( choiceladda * 20);
                     System.out.println("Du har nu "+ Meny.laddat+" pengar :) ");

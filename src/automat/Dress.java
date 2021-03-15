@@ -12,15 +12,14 @@ import java.util.Scanner;
  *
  * @author nureddinelmas
  */
-public class Drink extends ProduktAbs implements ProduktInterface{
+public class Dress extends ProduktAbs implements ProduktInterface{
 
-    public Drink(int pkod, String name, String beskrivning, float kostnad) {
+    public Dress(int pkod, String name, String beskrivning, float kostnad) {
         super(pkod, name, beskrivning, kostnad);
     }
-
     @Override
     public void Buy() {
-      Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         float summa = 0;
     
     if (Meny.laddat < kostnad){
@@ -47,14 +46,14 @@ public class Drink extends ProduktAbs implements ProduktInterface{
                 
 
         }
+
+
     }
-    
 
     @Override
     public void Description() {
 
         System.out.println(pkod+" --> "+name+" -- "+beskrivning+" -- "+kostnad+" kr ");
-
 
     }
 
@@ -62,23 +61,23 @@ public class Drink extends ProduktAbs implements ProduktInterface{
     public void Use() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-  
-     public static void DrinkList(ArrayList<Drink> drinkList) {
+    
+         public static void DressList(ArrayList<Dress> dressList) {
         System.out.println("---------------------------------------");
-        System.out.println("............DRINK.......................");
-         drinkList.forEach(i -> {
+        System.out.println("............KLÄDER.......................");
+         dressList.forEach(i -> {
              i.Description();
         });
                
       }
 
-       public static void DrinkKop(ArrayList<Drink> drinkList){
+       public static void DressKop(ArrayList<Dress> dressList){
            
        Scanner scan = new Scanner(System.in);
         System.out.print("Vad ska du köpa ?  ");
         int f = scan.nextInt();
-        drinkList.get(f).Description();
-        System.out.print("Är du säker att du köper "+drinkList.get(f).name+" ? 1 eller 0 ");
+        dressList.get(f).Description();
+        System.out.print("Är du säker att du köper "+dressList.get(f).name+" ? 1 eller 0 ");
         int d = scan.nextInt();
         switch(d){
             case 0:
@@ -86,9 +85,9 @@ public class Drink extends ProduktAbs implements ProduktInterface{
                 break;
             case 1:
 
-           drinkList.get(f).Description();
-            drinkList.get(f).Buy(); 
-                DrinkList(drinkList);
+           dressList.get(f).Description();
+            dressList.get(f).Buy(); 
+                DressList(dressList);
        }
    
 }

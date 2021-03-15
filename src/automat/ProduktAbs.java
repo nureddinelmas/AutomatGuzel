@@ -6,7 +6,6 @@
 package automat;
 
 import static automat.Meny.Menu;
-import static automat.Meny.scan;
 import java.util.ArrayList;
 import java.util.function.Consumer;
 
