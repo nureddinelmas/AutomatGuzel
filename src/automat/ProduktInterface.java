@@ -10,8 +10,12 @@ package automat;
  * @author nureddinelmas
  */
 public interface ProduktInterface {
+    
+    
+    
     void Buy();
     void Description();
     void Use();
+ 
     
 }

@@ -19,8 +19,10 @@ public class AutoMat {
 
     /**
      * @param args the command line arguments
+     * @throws java.lang.InterruptedException
      */
     public static void main(String[] args) throws InterruptedException {
+        // simdi biz burada bazi aciklamalar ekleyecegiz
         matList.add(new Mat(0, "Armut", "Mat", 35));
         matList.add(new Mat(1, "Elma", "Mat", 20));
         matList.add(new Mat(2, "Kayısı", "Mat", 25));
